@@ -27,12 +27,12 @@ function check_service_code(url, cb){
 var respCODE = 0;
 	request(url, function (error, response, body) {
 	    if (!error && response.statusCode == 200) {
-                var respCODE = response.statusCode;
+                respCODE =  response.statusCode;
                 cb(respCODE);
             }
             else {
-               var respCODE = 502;
-               cb(respCODE);
+               respCODE = 502;
+//               cb(respCODE);
 	    }
 	});
 }
@@ -46,6 +46,8 @@ while (serviceSTATUS !=1 && maxTRIES !=10)  {
     console.log('serviceSTATUS = ' + serviceSTATUS);
     console.log('maxTRIES = ' + maxTRIES);
     console.log('something = ' + something);
+
+
 
     if (something == 200){
 	console.log('Service is up with code: ' + something);	
